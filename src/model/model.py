@@ -4,7 +4,7 @@ from einops import rearrange, reduce
 
 class Vision:
     def __init__(self):
-        self.weight = torch.randn((1024, 3 * 16 * 16))
+        self.weight = torch.randn(1024, 3 * 16 * 16) / (3 * 16 * 16)
         self.weight.requires_grad_(True)
 
     def __call__(self, image: torch.Tensor) -> torch.Tensor:
